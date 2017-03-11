@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "outDir": "build",
+    "sourceMap": true,
+    "types": ["hammerjs"]
+  },
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit" : true
+  },
+  "exclude": [
+    "node_modules",
+    "client"
+  ]
+}

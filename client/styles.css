@@ -1,0 +1,5 @@
+@import '/node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css';
+body {
+    margin: 1em;
+    margin-top: -3em;
+}
