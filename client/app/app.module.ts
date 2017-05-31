@@ -3,6 +3,7 @@
  */
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpModule} from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule} from '@angular/forms';
@@ -20,7 +21,7 @@ import {Material2AppAppComponent, DialogContent} from './app.component/app.compo
 
 @NgModule({
     imports:      [ BrowserModule, ReactiveFormsModule,
-        HttpModule, routing, MaterialModule.forRoot()],
+        HttpModule, routing, MaterialModule, BrowserAnimationsModule],
     declarations: [ AppComponent, HomeComponent, YoMoFoComponent, ParkComponent, Material2AppAppComponent, DialogContent],
     entryComponents: [DialogContent],
     providers:    [
