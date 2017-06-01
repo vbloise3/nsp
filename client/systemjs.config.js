@@ -10,16 +10,24 @@ System.config({
         module: "commonjs"},
     map: {
         '@angular': 'node_modules/@angular',
+        '@angular/core': 'node_modules/@angular/core/bundles/core.umd.js',
+        '@angular/compiler': 'node_modules/@angular/compiler/bundles/compiler.umd.js',
+        '@angular/common': 'node_modules/@angular/common/bundles/common.umd.js',
         'rxjs'    : 'node_modules/rxjs',
+        '@angular/http': 'node_modules/@angular/http/bundles/http.umd.js',
+        '@angular/forms': 'node_modules/@angular/forms/bundles/forms.umd.min.js',
+        '@angular/router': 'node_modules/@angular/router/bundles/router.umd.js',
         '@angular/material': 'node_modules/@angular/material/bundles/material.umd.js',
         '@angular/animations': 'node_modules/@angular/animations/bundles/animations.umd.min.js',
         '@angular/animations/browser':'node_modules/@angular/animations/bundles/animations-browser.umd.js',
-        '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js'
+        '@angular/platform-browser': 'node_modules/@angular/platform-browser/bundles/platform-browser.umd.js',
+        '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+        '@angular/platform-browser-dynamic': 'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js'
     },
     paths: {
-        'node_modules/@angular/material/*': 'node_modules/@angular/material/bundles/material.umd.js',
-        'node_modules/@angular/platform-browser/animations/*': 'node_modules/@angular/platform-browser/animations/bundles/platform-browser-animations.umd.js',
-        'node_modules/@angular/*': 'node_modules/@angular/*/bundles'
+        //'node_modules/@angular/material/*': 'node_modules/@angular/material/bundles/material.umd.js',
+        //'node_modules/@angular/platform-browser/animations/*': 'node_modules/@angular/platform-browser/animations/bundles/platform-browser-animations.umd.js',
+        //'node_modules/@angular/*': 'node_modules/@angular/*/bundles'
         /*added these next three lines
         '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
         '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
@@ -33,17 +41,17 @@ System.config({
     },
     packages: {
         'app'                              : {main: 'main', defaultExtension: 'ts'},
-        'rxjs'                             : {main: 'Rx'},
-        '@angular/core'                    : {main: 'core.umd.min.js'},
-        '@angular/common'                  : {main: 'common.umd.min.js'},
-        '@angular/compiler'                : {main: 'compiler.umd.min.js'},
-        '@angular/router'                  : {main: 'router.umd.min.js'},
-        '@angular/forms'                  : {main: 'forms.umd.min.js'},
-        '@angular/http'                    : {main: 'http.umd.min.js'},
-        '@angular/platform-browser'        : {main: 'platform-browser.umd.min.js'},
-        '@angular/platform-browser-dynamic': {main: 'platform-browser-dynamic.umd.min.js'},
+        'rxjs'                             : {main: 'Rx'}
+        //'@angular/core'                    : {main: 'core.umd.min.js'},
+        //'@angular/common'                  : {main: 'common.umd.min.js'},
+        //'@angular/compiler'                : {main: 'compiler.umd.min.js'},
+        //'@angular/router'                  : {main: 'router.umd.min.js'}
+        //'@angular/forms'                  : {main: 'forms.umd.min.js'}
+        //'@angular/http'                    : {main: 'http.umd.min.js'}
+        //'@angular/platform-browser'        : {main: 'platform-browser.umd.min.js'},
+        //'@angular/platform-browser-dynamic': {main: 'platform-browser-dynamic.umd.min.js'},
         /* added this */
-        '@angular/platform-browser': {main: 'platform-browser-animations.umd.js'}
+        //'@angular/platform-browser': {main: 'platform-browser-animations.umd.js'}
     }
 });
 

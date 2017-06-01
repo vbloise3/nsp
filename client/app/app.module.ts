@@ -14,16 +14,18 @@ import AppComponent from './appComponent/appComponent';
 import HomeComponent from './home/home';
 import { ParkComponent } from './parkTest/parkTest';
 import { routing } from './app.routing';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule, MdSidenav } from '@angular/material';
+import { MdSidenavModule, MdToolbarModule } from '@angular/material';
 import 'node_modules/hammerjs/hammer.js';
 import {Material2AppAppComponent, DialogContent} from './app.component/app.component';
+import {PersonalInterestsComponent, DialogContent2} from './personalInterests.component/personalInterests.component';
 
 
 @NgModule({
-    imports:      [ BrowserModule, ReactiveFormsModule,
-        HttpModule, routing, MaterialModule, BrowserAnimationsModule],
-    declarations: [ AppComponent, HomeComponent, YoMoFoComponent, ParkComponent, Material2AppAppComponent, DialogContent],
-    entryComponents: [DialogContent],
+    imports:      [ BrowserModule, ReactiveFormsModule, RouterModule,
+        HttpModule, routing, MaterialModule, MdSidenavModule, MdToolbarModule, BrowserAnimationsModule],
+    declarations: [ AppComponent, HomeComponent, YoMoFoComponent, ParkComponent, Material2AppAppComponent, DialogContent, PersonalInterestsComponent, DialogContent2],
+    entryComponents: [DialogContent, DialogContent2],
     providers:    [
         {provide: LocationStrategy, useClass: HashLocationStrategy}],
     bootstrap:    [ AppComponent ]

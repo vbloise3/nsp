@@ -1,22 +1,24 @@
 /**
- * Created by vincebloise on 1/25/17.
+ * Created by vincebloise on 3/20/17.
  */
+
 import {Component, Optional, ViewEncapsulation} from '@angular/core';
-import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
+import {MdDialog, MdDialogRef, MdSnackBar, MdSidenav} from '@angular/material';
 import { Http, HttpModule} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/empty';
 import { Observable} from "rxjs/Observable";
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Router, Routes, RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'material2-app-app',
-    templateUrl: 'app/app.component/app.component2.html',
-    styleUrls: ['app/app.component/app.component.css'],
+    selector: 'personal-interests',
+    templateUrl: 'app/personalInterests.component/personalInterests.component.html',
+    styleUrls: ['app/personalInterests.component/personalInterests.component.css'],
     encapsulation:ViewEncapsulation.None
 })
-export class Material2AppAppComponent {
+export class PersonalInterestsComponent {
     isDarkTheme: boolean = false;
     lastDialogResult: string;
     myEmail: string = 'vbloise3@gmail.com';
@@ -45,7 +47,7 @@ export class Material2AppAppComponent {
 
     progress: number = 0;
 
-    constructor(private _dialog: MdDialog, private _snackbar: MdSnackBar, private http: Http, route: ActivatedRoute, private _router: Router ) {
+    constructor(private _dialog: MdDialog, /*private _mdsidenav: MdSidenav,*/ private _snackbar: MdSnackBar, private http: Http, route: ActivatedRoute, private _router: Router ) {
         this.products = this.http.get('/products')
             .map(res => res.json())
             .catch( err => {
@@ -61,8 +63,15 @@ export class Material2AppAppComponent {
         }, 200);
     }
 
+    getCurrentPath() {
+        if (this.currentPath === '/')
+            return true;
+        else
+            return false;
+    }
+
     openDialog() {
-        let dialogRef = this._dialog.open(DialogContent);
+        let dialogRef = this._dialog.open(DialogContent2);
 
         dialogRef.afterClosed().subscribe(result => {
             this.lastDialogResult = result;
@@ -103,6 +112,6 @@ export class Material2AppAppComponent {
     </div>
   `,
 })
-export class DialogContent {
-    constructor(@Optional() public dialogRef: MdDialogRef<DialogContent>) { }
+export class DialogContent2 {
+    constructor(@Optional() public dialogRef: MdDialogRef<DialogContent2>) { }
 }
